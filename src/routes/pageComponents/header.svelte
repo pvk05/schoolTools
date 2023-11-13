@@ -8,7 +8,7 @@
 </style>
 
 <AppBar>
-	<h1 class="h1">Periodic Table</h1>
+	<h1 class="h1">Skole</h1>
 	<svelte:fragment slot="lead">
 		<img src={atom} alt="hey" class=" w-10">
 	</svelte:fragment>
