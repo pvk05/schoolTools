@@ -1,0 +1,57 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { @apply h-full overflow-hidden; }
+
+.element {
+    height: 4.8vw;
+    width: 4.8vw;
+    //background-color: #cbd5e0;
+    border-collapse: collapse;
+}
+.element-atomic-number {
+    font-size: 0.7vw;
+}
+.element-symbol {
+    font-size: 1.2vw;
+    margin-bottom: -0.1rem;
+}
+.element-name {
+    font-size: 0.65vw;
+}
+
+
+/* Element category colors */
+
+.diatomicNonmetal {
+  	background-color: #faf089;
+}
+.nobleGas {
+  	background-color: #fbd38d;
+}
+.alkaliMetal {
+  	background-color: #feb2b2;
+}
+.alkalineEarthMetal {
+  	background-color: #7f9cf5;
+}
+.metalloid {
+  	background-color: #90cdf4;
+}
+.polyatomicNonmetal {
+  	background-color: #81e6d9;
+}
+.transitionMetal {
+  	background-color: #9ae6b4;
+}
+.post-transitionMetal {
+  	background-color: #9ae6b4;
+}
+.lanthanide {
+  	background-color: #fbb6ce;
+}
+.actinide {
+  	background-color: #d6bcfa;
+}
