@@ -1,18 +1,17 @@
 <script>
-    import { AppBar, LightSwitch } from "@skeletonlabs/skeleton";
-	import atom from '$lib/assets/atom.png'
-
+	import { AppBar, LightSwitch } from "@skeletonlabs/skeleton";
+	import gradHat from "$lib/assets/graduation-hat.png";
 </script>
-
-<style>
-</style>
 
 <AppBar>
 	<h1 class="h1">Skole</h1>
 	<svelte:fragment slot="lead">
-		<img src={atom} alt="hey" class=" w-10">
+		<img src={gradHat} alt="hey" class=" w-12" />
 	</svelte:fragment>
 	<svelte:fragment slot="trail">
 		<LightSwitch />
 	</svelte:fragment>
 </AppBar>
+
+<style>
+</style>
