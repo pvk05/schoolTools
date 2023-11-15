@@ -49,7 +49,7 @@
 	
 	<!-- --- -->
 	<svelte:fragment slot="trail">
-		<AppRailAnchor href="./minSide" title="Account"
+		<AppRailAnchor href="./login" title="login"
 			>Min Side</AppRailAnchor
 		>
 	</svelte:fragment>
