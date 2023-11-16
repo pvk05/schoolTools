@@ -58,4 +58,38 @@ export const actions = {
       throw redirect(303, '/')
     }
   },
+  fagValg: async ({request,  locals: { supabase, getSession } }) => {
+    const session = await getSession()
+    
+    const formData = await request.formData()
+    const blokkA = formData.get('blokkA')
+    const blokkB = formData.get('blokkB')
+    const blokkC = formData.get('blokkC')
+    const blokkD = formData.get('blokkD')
+
+    const { error } = await supabase.from('fagValg').insert({
+      user_id: session?.user.id,
+      created_at: new Date(),
+      blokkA: blokkA,
+      blokkB: blokkB,
+      blokkC: blokkC,
+      blokkD: blokkD
+    })
+
+    if(error) {
+      return fail(500, {
+        blokkA,
+        blokkB,
+        blokkC,
+        blokkD
+      })
+    }
+
+    return {
+      blokkA,
+      blokkB,
+      blokkC,
+      blokkD
+    }
+  },
 }

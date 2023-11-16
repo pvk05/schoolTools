@@ -3,6 +3,7 @@
 	import { enhance } from '$app/forms';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import Avatar from './avatar.svelte'
+    import FagValg from './fagValg.svelte';
 
 	export let data
 	export let form
@@ -96,9 +97,4 @@
 
 <br>
 
-<div class="form-widget bg-surface-200-700-token w-2/3 p-5 m-auto rounded">
-	<h3 class="h3">Fagvalg</h3>
-	<form action="">
-		
-	</form>
-</div>
+<FagValg />
