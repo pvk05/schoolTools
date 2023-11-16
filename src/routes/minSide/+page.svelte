@@ -2,7 +2,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import type { SubmitFunction } from '@sveltejs/kit';
-	import Avatar from './Avatar.svelte'
+	import Avatar from './avatar.svelte'
 
 	export let data
 	export let form
