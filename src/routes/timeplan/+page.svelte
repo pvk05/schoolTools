@@ -1,5 +1,7 @@
 <script>
-    
+    import { dagCol, programFagTimer, timeRow } from './main.js'
+
+    console.log((programFagTimer.blokkA[0].end-programFagTimer.blokkA[0].start)/(1000*60*15))
 </script>
 
 <h3 class="h3">Timeplan</h3>
@@ -22,18 +24,63 @@
     <div class=" row-start-26 col-start-1 w-full border-y-2 row-span-4">14.00</div>
     <div class=" row-start-30 col-start-1 w-full border-y-2 row-span-4">15.00</div>
 
-    <div class=" row-start-3 row-end-7 col-start-2 border-y-2 bg-surface-100-800-token">Historie</div>
-
-    <!--
-    {#each Array(4) as _, index1 (index1)}
-        {#each Array(32) as _, index2 (index2)}
-		    <div style="grid-row-start: {index2 +2};" class=" row-start-{index2 + 2} col-start-{index1+2} w-full border-y-2">{index2+2}</div>
-	    {/each}
+    
+    {#each programFagTimer.blokkA as time}
+    <div 
+        style="
+            grid-row-start: {timeRow[time.start.getHours()][time.start.getMinutes()]}; 
+            grid-row-end: {timeRow[time.start.getHours()][time.start.getMinutes()]+(time.end-time.start)/(1000*60*15)};
+            grid-column-start: {dagCol[time.day]};
+            " 
+        class=" border-y-2 bg-surface-100-800-token"
+        >
+        <h5 class="h5">Matte</h5>
+        <span>{time.day}</span>
+        <p>{time.startText} - {time.endText}</p>
+    </div>
     {/each}
-    -->
-
-    <div style="grid-row-start: 17;" class=" col-start-6 w-full border-y-2 row-span-5 bg-surface-100-800-token">Matte</div>
-
+    {#each programFagTimer.blokkB as time}
+    <div 
+        style="
+            grid-row-start: {timeRow[time.start.getHours()][time.start.getMinutes()]}; 
+            grid-row-end: {timeRow[time.start.getHours()][time.start.getMinutes()]+(time.end-time.start)/(1000*60*15)};
+            grid-column-start: {dagCol[time.day]};
+            " 
+        class=" border-y-2 bg-surface-100-800-token"
+        >
+        <h5 class="h5">Blokk B</h5>
+        <span>{time.day}</span>
+        <p>{time.startText} - {time.endText}</p>
+    </div>
+    {/each}
+    {#each programFagTimer.blokkC as time}
+    <div 
+        style="
+            grid-row-start: {timeRow[time.start.getHours()][time.start.getMinutes()]}; 
+            grid-row-end: {timeRow[time.start.getHours()][time.start.getMinutes()]+(time.end-time.start)/(1000*60*15)};
+            grid-column-start: {dagCol[time.day]};
+            " 
+        class=" border-y-2 bg-surface-100-800-token"
+        >
+        <h5 class="h5">Blokk C</h5>
+        <span>{time.day}</span>
+        <p>{time.startText} - {time.endText}</p>
+    </div>
+    {/each}
+    {#each programFagTimer.blokkD as time}
+    <div 
+        style="
+            grid-row-start: {timeRow[time.start.getHours()][time.start.getMinutes()]}; 
+            grid-row-end: {timeRow[time.start.getHours()][time.start.getMinutes()]+(time.end-time.start)/(1000*60*15)};
+            grid-column-start: {dagCol[time.day]};
+            " 
+        class=" border-y-2 bg-surface-100-800-token"
+        >
+        <h5 class="h5">Blokk D</h5>
+        <span>{time.day}</span>
+        <p>{time.startText} - {time.endText}</p>
+    </div>
+    {/each}
 
     <div style="grid-row-start: 2;" class=" col-start-7 w-full border-y-2">08.00</div>
     <div style="grid-row-start: 3;" class=" col-start-7 w-full border-y-2">08.00</div>
