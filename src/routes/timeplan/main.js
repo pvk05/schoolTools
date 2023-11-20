@@ -71,10 +71,10 @@ export let programFagTimer = {
 	blokkD: [
 		{
 			day: "Tirsdag",
-			start: new Date(2000, 0, 1, 8, 30),
-			startText:"08.30",
-			end: new Date(2000, 0, 1, 10, 0),
-			endText:"10.00"
+			start: new Date(2000, 0, 1, 8, 15),
+			startText:"08.15",
+			end: new Date(2000, 0, 1, 9, 45),
+			endText:"09.45"
 		},
 		{
 			day: "Torsdag",
