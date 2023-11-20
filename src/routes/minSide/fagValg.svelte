@@ -1,8 +1,6 @@
 <script>
 
-
-	let blokkA;
-
+	
 
 </script>
 

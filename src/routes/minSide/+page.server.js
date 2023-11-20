@@ -67,7 +67,7 @@ export const actions = {
     const blokkC = formData.get('blokkC')
     const blokkD = formData.get('blokkD')
 
-    const { error } = await supabase.from('fagValg').insert({
+    const { error } = await supabase.from('fagValg').upsert({
       user_id: session?.user.id,
       created_at: new Date(),
       blokkA: blokkA,
