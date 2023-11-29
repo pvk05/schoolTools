@@ -13,7 +13,13 @@ export const load = async ({ locals: { supabase, getSession } }) => {
     .eq('id', session.user.id)
     .single()
 
-  return { session, profile }
+  const { data: fagValg } = await supabase
+    .from('fagValg')
+    .select(`blokkA, blokkB, blokkC, blokkD`)
+    .eq('user_id', session.user.id)
+    .single()
+
+  return { session, profile, fagValg }
 }
 
 export const actions = {

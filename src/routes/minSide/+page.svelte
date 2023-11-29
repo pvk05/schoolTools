@@ -8,8 +8,8 @@
 	export let data
 	export let form
 
-	let { session, supabase, profile } = data
-	$: ({ session, supabase, profile } = data)
+	let { session, supabase, profile, fagValg } = data
+	$: ({ session, supabase, profile, fagValg } = data)
 
 	let profileForm: HTMLFormElement
 	let loading = false
@@ -97,4 +97,4 @@
 
 <br>
 
-<FagValg />
+<FagValg data={data}/>
