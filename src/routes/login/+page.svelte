@@ -21,3 +21,8 @@
 		/>
 	</div>
 </div>
+
+<form action="?/login" method="post">
+	<input type="email" name="mail" id="mail">
+	<input type="submit" value="Submit">
+</form>
