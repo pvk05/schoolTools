@@ -22,7 +22,7 @@ export const load = async ({ locals: { supabase, getSession } }) => {
 
     const { data: tasks } = await supabase
         .from('todos')
-        .select(`task, listName`)
+        .select(`id, task, listName`)
         .eq('user_id', session.user.id)
 
     return { session, profile, fagValg, tasks }
@@ -32,7 +32,10 @@ export const actions = {
     addTask: async ({ request, locals: { supabase, getSession } }) => {
         const formData = await request.formData()
         const taskName = formData.get('taskName') //as string
-        const listName = formData.get('listName')
+        let listName = formData.get('listName')
+        if(listName == "new") {
+          listName = formData.get('newListName')
+        }
     
         const session = await getSession()
     
@@ -55,5 +58,22 @@ export const actions = {
         return {
             data
         }
-      },
+  },
+  deleteTask: async ({ request, locals: { supabase, getSession } }) => {
+      const formData = await request.formData()
+      const taskId = formData.get('taskId') //as string
+      const session = await getSession()
+    
+      const { data, error } = await supabase.from('todos').delete().match({ id: taskId, user_id: session?.user.id })
+    
+      if (error) {
+        return fail(500, {
+          id: taskId
+        })
+      }
+    
+      return {
+          data
+      }
+  },
 }
