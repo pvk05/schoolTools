@@ -1,4 +1,5 @@
 <script>
+	import { enhance } from '$app/forms';
 
     export let data;
 
@@ -14,9 +15,18 @@
     }
 
     let list;
+
+    let loading = false;
+
+    const handleSubmit = () => {
+		loading = true
+		return async () => {
+			loading = false
+		}
+	}
 </script>
 
-<form action="?/addTask" method="post">
+<form action="?/addTask" method="post" use:enhance={handleSubmit}>
     <input type="text" name="taskName" id="taskName">
     {#if tasks}
     <select name="listName" id="listName" class="select variant-ghost-secondary" bind:value={list}>
