@@ -15,7 +15,7 @@
 		<Auth
 			supabaseClient={data.supabase}
 			view="magic_link"
-			redirectTo={`http://localhost:5173/auth/callback`}
+			redirectTo={`http://localhost:4173/auth/callback`}
 			showLinks={false}
 			appearance={{ theme: ThemeSupa, style: { input: 'color: #fff' } }}
 		/>
